@@ -43,7 +43,6 @@ Proyecto de tienda web para la asignatura de Lenguaje de Marcas. Incluye catalog
 - Ver [docs/USO.md](docs/USO.md)
 - Ver [docs/ARQUITECTURA.md](docs/ARQUITECTURA.md)
 - Ver [docs/ENTREGA.md](docs/ENTREGA.md)
-- Ver [docs/PAGES.md](docs/PAGES.md)
 
 ## Licencia
 MIT. Ver [LICENSE](LICENSE).
