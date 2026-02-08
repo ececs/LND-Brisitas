@@ -4,6 +4,8 @@ Pagina web creada para la asignatura de lenguaje de marcas
 =======
 # LND Brisitas
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Online-brightgreen)](https://ececs.github.io/LND-Brisitas/)
+
 Proyecto de tienda web para la asignatura de Lenguaje de Marcas. Incluye catalogo, carrito, checkout simulado, contacto y panel admin local.
 
 ## Autor
@@ -24,6 +26,9 @@ Proyecto de tienda web para la asignatura de Lenguaje de Marcas. Incluye catalog
 2. Agregar productos al carrito.
 3. Finalizar compra en `checkout.html`.
 4. Gestionar productos en `admin.html`.
+
+## Demo online
+- https://ececs.github.io/LND-Brisitas/
 
 ## Estructura
 - `index.html`: Home
