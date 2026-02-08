@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedido - Mi Tienda de Bebés</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cream: #f2f0e7;
+            --light-blue: #b8dae0;
+            --yellow: #f5d685;
+            --text-dark: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--yellow);
+            margin: 10px auto 0;
+        }
+
+        .form-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .form-section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--light-blue);
+            box-shadow: 0 0 0 3px rgba(184, 218, 224, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .product-item {
+            display: flex;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: rgba(184, 218, 224, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .product-image {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: var(--cream);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--yellow);
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .remove-btn {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background-color: #f5c6cb;
+        }
+
+        .add-product-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--light-blue);
+            color: var(--text-dark);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .add-product-btn:hover {
+            background-color: var(--yellow);
+        }
+
+        .coupon-section {
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .coupon-input {
+            flex: 1;
+        }
+
+        .apply-coupon {
+            background-color: var(--light-blue);
+            color: var(--text-dark);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .apply-coupon:hover {
+            background-color: var(--yellow);
+        }
+
+        .order-summary {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 18px;
+            padding-top: 15px;
+        }
+
+        .payment-options {
+            margin-top: 25px;
+        }
+
+        .payment-method {
+            margin-bottom: 15px;
+        }
+
+        .payment-method label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .payment-method input[type="radio"] {
+            margin: 0;
+        }
+
+        .payment-icon {
+            font-size: 20px;
+            color: var(--light-blue);
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .back-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .submit-btn {
+            background-color: var(--yellow);
+            color: var(--text-dark);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #f0c76a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .checkbox-group {
+            margin-top: 20px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .form-group {
+                width: 100%;
+            }
+
+            .product-item {
+                flex-direction: column;
+            }
+
+            .product-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .coupon-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .back-btn, .submit-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="top-bar small-header">
+                    <a href="index.html" class="logo">
+                        <img src="./Img/Logo.png" alt="Brisitas Logo" class="logo-img small-logo">
+                    </a>
+                    <h1 class="site-title">Brisitas.es</h1>
+                    <div class="search-cart">
+                        <form class="search-form">
+                            <input type="text" class="search-input small-input" placeholder="Buscar..." aria-label="Buscar productos">
+                        
+                        </form>
+                        <div class="cart">
+                            <div class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <button class="mobile-menu-btn">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <div class="container">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./ropa_y_accesorios.html" class="nav-link">Ropa y Accesorios</a>
+                            <ul class="dropdown">
+                                <li><a href="./recien_nacidos.html" class="dropdown-link">Recién Nacidos</a></li>
+                                <li><a href="./bebes.html" class="dropdown-link">Bebés</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./alimentacion.html" class="nav-link">Alimentación</a>
+                            <ul class="dropdown">
+                                <li><a href="biberones.html" class="dropdown-link">Biberones</a></li>
+                                <li><a href="lactancia.html" class="dropdown-link">Lactancia</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./descanso.html" class="nav-link">Descanso</a>
+                            <ul class="dropdown">
+                                <li><a href="cunas.html" class="dropdown-link">Cunas</a></li>
+                                <li><a href="sabanas.html" class="dropdown-link">Sábanas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./blog.html" class="nav-link">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    <div class="container">
+        <h1>Finalizar Pedido</h1>
+        
+        <form class="form-container" id="orderForm">
+            <!-- Datos Personales -->
+            <div class="form-section">
+                <h2 class="form-section-title">Datos Personales</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nombre*</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Apellidos*</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dirección de Envío -->
+            <div class="form-section">
+                <h2 class="form-section-title">Dirección de Envío</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="address">Dirección*</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Ciudad*</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zipCode">Código Postal*</label>
+                        <input type="text" id="zipCode" name="zipCode" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="province">Provincia*</label>
+                        <select id="province" name="province" required>
+                            <option value="">Seleccionar provincia</option>
+                            <option value="madrid">Santa Cruz de Tenerife</option>
+                            <option value="barcelona">Las Palmas de Gran Canaria</option>
+                            <!-- Más provincias aquí -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">País*</label>
+                        <select id="country" name="country" required>
+                            <option value="es">España</option>
+                            <!-- Más países aquí -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="shippingNotes">Pedido.</label>
+                    <textarea id="shippingNotes" name="shippingNotes" placeholder="Escriba aqui los productos que desea con talla y color"></textarea>
+                </div>
+            </div>
+                
+            <!-- Métodos de Pago -->
+            <div class="form-section">
+                <h2 class="form-section-title">Método de Pago</h2>
+                <div class="payment-options">
+                    <div class="payment-method">
+                        <label>
+                            <input type="radio" name="paymentMethod" value="card" checked>
+                            <i class="fas fa-credit-card payment-icon"></i>
+                            Tarjeta de crédito/débito
+                        </label>
+                    </div>
+                    <div class="payment-method">
+                        <label>
+                            <input type="radio" name="paymentMethod" value="paypal">
+                            <i class="fab fa-paypal payment-icon"></i>
+                            PayPal
+                        </label>
+                    </div>
+                    <div class="payment-method">
+                        <label>
+                            <input type="radio" name="paymentMethod" value="transfer">
+                            <i class="fas fa-university payment-icon"></i>
+                            Transferencia bancaria
+                        </label>
+                    </div>
+                    <div class="payment-method">
+                        <label>
+                            <input type="radio" name="paymentMethod" value="cash">
+                            <i class="fas fa-money-bill-wave payment-icon"></i>
+                            Contra reembolso
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Términos y condiciones -->
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="termsAccepted" required>
+                        <span>He leído y acepto los <a href="#" style="color: var(--light-blue);">términos y condiciones</a> y la <a href="#" style="color: var(--light-blue);">política de privacidad</a>.*</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="newsletter">
+                        <span>Deseo recibir noticias, ofertas y promociones exclusivas.</span>
+                    </label>
+                </div>
+            </div>
+            <script>
+                document.getElementById('orderForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    const formData = new FormData(this);
+                    const emailBody = Array.from(formData.entries())
+                        .map(([key, value]) => `${key}: ${value}`)
+                        .join('\n');
+
+                    const mailtoLink = `mailto:info@brisitas.com?subject=Nuevo Pedido&body=${encodeURIComponent(emailBody)}`;
+                    window.location.href = mailtoLink;
+                });
+            </script>
+            <!-- Botones de acción -->
+            <div class="form-footer">
+                <button type="button" class="back-btn">Volver a la tienda</button>
+                <button type="submit" class="submit-btn">Enviar pedido</button>
+            </div>
+        </form>
+    </div>
+
+ <!-- Footer -->
+ <footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Brisitas</h3>
+                <p>Tu tienda de confianza para productos de bebé en Canarias. Calidad, seguridad y sostenibilidad para los más pequeños.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/brisitas" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/brisitas" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://pinterest.com/brisitas" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Categorías</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="./ropa_y_accesorios.html">Ropa y Accesorios</a></li>
+                    <li class="footer-link"><a href="./alimentacion.html">Alimentación</a></li>
+                    <li class="footer-link"><a href="./descanso.html">Descanso</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Información</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li class="footer-link"><a href="contacto.html">Contacto</a></li>
+                        <li class="footer-link"><a href="admin.html">Panel Admin</a></li>
+                    <li class="footer-link"><a href="envios.html">Envíos</a></li>
+                    <li class="footer-link"><a href="devoluciones.html">Política de Devoluciones</a></li>
+                    <li class="footer-link"><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li class="footer-link"><a href="privacidad.html">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Santa Cruz de Tenerife</li>
+                    <li><i class="fas fa-phone"></i> +34 922 123 456</li>
+                    <li><i class="fas fa-envelope"></i> info@brisitas.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Brisitas. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../Drive/IDES/Visual Studio Code/Hola"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Pagina Web"
+	}
+}

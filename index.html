@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- META TAGS - Información básica y configuración de la página -->
+    <meta charset="UTF-8">    <!-- Codificación de caracteres para soporte de acentos y caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Configuración para dispositivos móviles (responsive design) -->
+    
+    <!-- TÍTULO DE LA PÁGINA -->
+    <title>Brisitas - Tienda Online de Ropa y Productos para Bebé en Canarias</title>
+    
+    <!-- HOJAS DE ESTILO -->
+    <link rel="stylesheet" href="styles.css">    <!-- Estilos principales del sitio -->
+    
+    <!-- FUENTES - Tipografía personalizada de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ICONOS - Biblioteca Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER - Cabecera principal del sitio -->
+    <header>
+        <div class="container">
+            <!-- Barra superior con logo, título y búsqueda -->
+            <div class="top-bar small-header">
+                <!-- Logo del sitio -->
+                <a href="index.html" class="logo">
+                    <img src="./Img/Logo.png" alt="Brisitas Logo" class="logo-img small-logo">
+                </a>
+                
+                <!-- Título del sitio -->
+                <h1 class="site-title">Brisitas.es</h1>
+                
+                <!-- Buscador y carrito de compras -->
+                <div class="search-cart">
+                    <!-- Formulario de búsqueda -->
+                    <form class="search-form">
+                        <input type="text" class="search-input small-input" placeholder="Buscar..." aria-label="Buscar productos">
+                    </form>
+                    
+                    <!-- Icono de carrito de compras -->
+                    <div class="cart">
+                        <div class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </div>
+                        
+                        <!-- Botón para menú móvil -->
+                        <button class="mobile-menu-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NAVEGACIÓN PRINCIPAL - Menú de categorías -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <!-- Enlaces de navegación con submenús desplegables -->
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./ropa_y_accesorios.html" class="nav-link">Ropa y Accesorios</a>
+                        <!-- Submenú de Ropa y Accesorios -->
+                        <ul class="dropdown">
+                            <li><a href="./recien_nacidos.html" class="dropdown-link">Recién Nacidos</a></li>
+                            <li><a href="./bebes.html" class="dropdown-link">Bebés</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./alimentacion.html" class="nav-link">Alimentación</a>
+                        <!-- Submenú de Alimentación -->
+                        <ul class="dropdown">
+                            <li><a href="biberones.html" class="dropdown-link">Biberones</a></li>
+                            <li><a href="lactancia.html" class="dropdown-link">Lactancia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./descanso.html" class="nav-link">Descanso</a>
+                        <!-- Submenú de Descanso -->
+                        <ul class="dropdown">
+                            <li><a href="cunas.html" class="dropdown-link">Cunas</a></li>
+                            <li><a href="sabanas.html" class="dropdown-link">Sábanas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./blog.html" class="nav-link">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- SLIDER PRINCIPAL - Carrusel de imágenes destacadas -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <!-- Contenedor de slides -->
+            <div class="slider">
+                <!-- Slide 1 - Activo por defecto -->
+                <div class="slide active">
+                    <img src="./Img/gorro1.jpg" alt="Promoción bebés" loading="lazy">
+                    <div class="slide-content">
+                        <h2>Nueva colección primavera</h2>
+                        <p>Descubre nuestra selección de ropa fresca y cómoda para esta temporada</p>
+                        <a href="ropa_y_accesorios.html" class="cta-btn">Ver colección</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="./Img/img8.jpg" alt="Productos para bebés" loading="lazy">
+                    <div class="slide-content">
+                        <h2>20% de descuento</h2>
+                        <p>En todos nuestros productos de alimentación</p>
+                        <a href="alimentacion.html" class="cta-btn">Ver ofertas</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="./Img/desc3.jpg" alt="Accesorios para bebés" loading="lazy">
+                    <div class="slide-content">
+                        <h2>Todo para el descanso</h2>
+                        <p>Cunas, sábanas y accesorios para un sueño seguro</p>
+                        <a href="descanso.html" class="cta-btn">Comprar ahora</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controles de navegación del slider -->
+            <div class="slider-controls">
+                <!-- Botón anterior -->
+                <button class="prev-btn" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <!-- Indicadores de posición (dots) -->
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                
+                <!-- Botón siguiente -->
+                <button class="next-btn" aria-label="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CATEGORÍAS DESTACADAS - Muestra las principales categorías de productos -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Categorías Destacadas</h2>
+            <div class="categories">
+                <!-- Tarjeta de categoría: Ropa -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="./Img/img4.jpg" alt="Ropa para bebés" style="width: 100%; height: auto;" loading="lazy" />
+                    </div>
+                    <div class="category-content">
+                        <h3>Ropa</h3>
+                        <p>Prendas cómodas y seguras para tu bebé</p>
+                        <a href="ropa_y_accesorios.html" class="category-link">Ver productos</a>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta de categoría: Alimentación -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="./Img/alim3.jpg" alt="Alimentación bebés" style="width: 100%; height: auto;" loading="lazy" />                   
+                    </div>
+                    <div class="category-content">
+                        <h3>Alimentación</h3>
+                        <p>Todo lo necesario para la alimentación de tu bebé</p>
+                        <a href="alimentacion.html" class="category-link">Ver productos</a>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta de categoría: Descanso -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="./Img/desc1.jpg" alt="Descanso para bebés" style="width: 100%; height: auto;" loading="lazy" />                    
+                    </div>
+                    <div class="category-content">
+                        <h3>Descanso</h3>
+                        <p>Cunas, sábanas y todo para un sueño seguro</p>
+                        <a href="sabanas.html" class="category-link">Ver productos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PRODUCTOS DESTACADOS - Muestra los productos más vendidos o promocionados -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="products-grid">
+                <!-- Producto 1: Body Orgánico -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="./Img/body1.jpg" alt="Body bebé orgánico" style="width: 100%; height: auto;" loading="lazy" />
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Body Orgánico</h3>
+                        <p class="product-price">14.99€</p>
+                        <a href="#" class="add-to-cart">Añadir al carrito</a>
+                    </div>
+                </div>
+                
+                <!-- Producto 2: Conjunto Dos Piezas -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="./Img/conjunto.jpg" alt="Conjunto bebé" style="width: 100%; height: auto;" />
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Conjunto Dos Piezas</h3>
+                        <p class="product-price">24.99€</p>
+                        <a href="#" class="add-to-cart">Añadir al carrito</a>
+                    </div>
+                </div>
+                
+                <!-- Producto 3: Pijama de Algodón -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="./Img/pijama.jpg" alt="Pijama bebé" style="width: 100%; height: auto;" />
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Pijama de Algodón</h3>
+                        <p class="product-price">19.99€</p>
+                        <a href="#" class="add-to-cart">Añadir al carrito</a>
+                    </div>
+                </div>
+                
+                <!-- Producto 4: Gorro -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="./Img/gorro.jpg" alt="Gorro bebé" style="width: 100%; height: auto;" />
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gorro</h3>
+                        <p class="product-price">9.99€</p>
+                        <a href="#" class="add-to-cart">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- BENEFICIOS - Ventajas de comprar en la tienda -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <div class="benefits-grid">
+                <!-- Beneficio 1: Envío Rápido -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck" aria-label="Envío Rápido"></i>
+                    </div>
+                    <h3 class="benefit-title">Envío Rápido</h3>
+                    <p>Entrega en 24-48h en todas las islas Canarias.</p>
+                </div>
+                
+                <!-- Beneficio 2: Productos Sostenibles -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="benefit-title">Productos Sostenibles</h3>
+                    <p>Comprometidos con el medio ambiente y la seguridad de tu bebé.</p>
+                </div>
+                
+                <!-- Beneficio 3: Devolución Gratuita -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3 class="benefit-title">Devolución Gratuita</h3>
+                    <p>30 días para devoluciones sin coste adicional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- TESTIMONIOS - Opiniones de clientes -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <div class="testimonial-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-content">"La ropa es de excelente calidad y el envío fue muy rápido. Totalmente recomendable para todos los papás en Canarias."</p>
+                    <p class="testimonial-author">- María Rodríguez</p>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-content">"Los productos son exactamente como se muestran en las fotos. Mi bebé está encantado con su nueva ropa."</p>
+                    <p class="testimonial-author">- Carlos Hernández</p>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-content">"Excelente atención al cliente. Me ayudaron a elegir el tamaño correcto para mi bebé y estoy muy satisfecha."</p>
+                    <p class="testimonial-author">- Laura González</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NEWSLETTER - Suscripción a boletín de noticias -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Suscríbete a nuestra newsletter</h2>
+            <p>Recibe las últimas novedades, ofertas exclusivas y consejos sobre maternidad y cuidado del bebé.</p>
+            <!-- Formulario de suscripción -->
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Tu correo electrónico">
+                <button type="submit" class="newsletter-btn">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- FOOTER - Pie de página con información de contacto y enlaces -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Columna 1: Información de la empresa -->
+                <div class="footer-column">
+                    <h3>Brisitas</h3>
+                    <p>Tu tienda de confianza para productos de bebé en Canarias. Calidad, seguridad y sostenibilidad para los más pequeños.</p>
+                    <!-- Enlaces a redes sociales -->
+                    <div class="social-links">
+                        <a href="https://facebook.com/brisitas" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/brisitas" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://pinterest.com/brisitas" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Columna 2: Enlaces a categorías -->
+                <div class="footer-column">
+                    <h3>Categorías</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="./ropa_y_accesorios.html">Ropa y Accesorios</a></li>
+                        <li class="footer-link"><a href="./alimentacion.html">Alimentación</a></li>
+                        <li class="footer-link"><a href="./descanso.html">Descanso</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 3: Enlaces a información legal -->
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li class="footer-link"><a href="contacto.html">Contacto</a></li>
+                        <li class="footer-link"><a href="admin.html">Panel Admin</a></li>
+                        <li class="footer-link"><a href="envios.html">Envíos</a></li>
+                        <li class="footer-link"><a href="devoluciones.html">Política de Devoluciones</a></li>
+                        <li class="footer-link"><a href="terminos.html">Términos y Condiciones</a></li>
+                        <li class="footer-link"><a href="privacidad.html">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 4: Información de contacto -->
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Santa Cruz de Tenerife</li>
+                        <li><i class="fas fa-phone"></i> +34 922 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@brisitas.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright - Texto legal al pie de página -->
+            <div class="copyright">
+                <p>&copy; <span id="current-year"></span> Brisitas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Script para actualizar el año actual en el copyright
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+    
+    <!-- Enlace al archivo JavaScript principal -->
+    <script src="script.js" defer></script>
+</body>
+</html>
