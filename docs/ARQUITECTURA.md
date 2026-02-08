@@ -11,6 +11,11 @@
 - Admin: alta y listado de productos locales.
 - Catalogo: renderizado base + productos agregados desde admin.
 
+## Flujo basico
+1. El usuario agrega productos al carrito.
+2. El checkout genera un pedido y lo guarda en `localStorage`.
+3. El panel admin lee los pedidos y permite alta de productos.
+
 ## Persistencia
 - `brisitasCart`: carrito actual.
 - `brisitasOrders`: pedidos generados.
