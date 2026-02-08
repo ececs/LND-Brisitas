@@ -42,4 +42,8 @@ Proyecto de tienda web para la asignatura de Lenguaje de Marcas. Incluye catalog
 
 ## Licencia
 MIT. Ver [LICENSE](LICENSE).
+<<<<<<< HEAD
 >>>>>>> eb8b4a1 (Initial commit: LND Brisitas)
+=======
+# LND-Brisitas
+>>>>>>> 12e056b (first commit)
